@@ -37,3 +37,23 @@ a:hover {
 .challenge {
 	padding-left:30px;
 }
+
+.resource.reading {
+	background-image: url(../img/reading-sm.png);
+}
+
+.resource.video {
+	background-image: url(../img/video-sm.png);
+}
+
+.resource.slides {
+    background-image: url(../img/slides-sm.png);
+}
+
+.resources .resource {
+  list-style: none;
+  min-height: 32px;
+  padding-left: 42px;
+  line-height: 32px;
+  background-repeat: no-repeat;
+}

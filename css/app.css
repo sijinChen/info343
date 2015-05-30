@@ -38,22 +38,17 @@ a:hover {
 	padding-left:30px;
 }
 
-.resource.reading {
-	background-image: url(../img/reading-sm.png);
+table#details tr td:first-child{
+	font-weight:bold;
+	padding-right:10px;
 }
 
-.resource.video {
-	background-image: url(../img/video-sm.png);
+.btn-group-justified>.btn-group .btn {
+  font-size: 25px;
 }
-
-.resource.slides {
-    background-image: url(../img/slides-sm.png);
+.group {
+	border-bottom:1px solid #d3d3d3;
 }
-
-.resources .resource {
-  list-style: none;
-  min-height: 32px;
-  padding-left: 42px;
-  line-height: 32px;
-  background-repeat: no-repeat;
+.row {
+	padding-bottom:10px;
 }

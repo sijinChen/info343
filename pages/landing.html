@@ -1,0 +1,55 @@
+<main ng-app="LandingApp" ng-controller="LandingController">		
+	<div>
+	<div class="container-fluid group">
+		<div class = "row">
+			<div class="col-sm-4">
+				<h2>Details</h2>
+					<table id="details">
+						<tr>
+							<td>Dates:</td>
+							<td ng-bind="content.dates"></td>
+						</tr>
+							<td>Time:</td>
+							<td ng-bind="content.time"></td>
+						</tr>
+							<td>Location:</td>
+							<td ng-bind="content.location"></td>
+						</tr>
+							<td>Credits:</td>
+							<td ng-bind="content.credits"></td>
+						</tr>
+					</table>
+				</div>
+			<div class="col-sm-4">
+				<div>
+					<h2>Instructor</h2>
+					<div ng-bind="content.instructor"></div>
+					<div ng-bind="content.instructor_position"></div>
+					<a href="mailto:{{content.instructor_email}}?Subject=Info343%20question" target="_top">Email</a>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div>
+					<h2>Teaching Assistant</h2>
+					<div ng-bind="content.ta"></div>
+					<div ng-bind="content.ta_position"></div>
+					<a href="mailto:{{content.ta_email}}?Subject=Info343%20question" target="_top">Email</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid">
+		<div class="group">
+			<h2>Overview</h2>
+			<p ng-bind="content.overview"></p>
+		</div>
+		<div class="group">
+			<h2>Challenges</h2>
+			<p ng-bind="content.challenges"></p>
+		</div>
+		<div class="group">
+			<h2>Participation</h2>
+			<p ng-bind="content.participation"></p>
+		</div>
+	</div>
+</main>

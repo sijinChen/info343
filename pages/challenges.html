@@ -1,0 +1,11 @@
+<main ng-app="ChallengeApp" ng-controller="ChallengeController">		
+	<a class="section" ng-click="viewChallenge(null)" ng-if="currentChallenge" >Back to Challenges</a>
+	<div ng-if="!currentChallenge" class="section">Challenges</div>
+	<div ng-if="!currentChallenge" class="lesson" ng-repeat="challenge in challenges">
+		<div>
+			<a class="title" ng-click="viewChallenge(challenge.url)">{{challenge.title}}</a>
+		</div>
+		<div class="description">{{challenge.description}}</div>
+	</div>
+	<div class="challenge" ng-if="currentChallenge" ng-include="currentChallenge"></div>
+</main>

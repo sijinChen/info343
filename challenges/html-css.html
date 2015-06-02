@@ -1,0 +1,252 @@
+<h2>Summary</h2>
+
+<p>Every discipline starts somewhere, and client-side web development starts with HTML (Hyper-Text Markup Language) and CSS (Cascading Style Sheets). HTML is a descriptive markup language that enables us to add meaning to otherwise plain text. CSS is a declarative language that enables us to define formatting rules for our HTML. When combined together, these two languages allow us to write semantically-rich and visually-appealing pages.</p>
+
+<p>During this challenge, you will get a chance to practice and demonstrate your proficiency in basic HTML and CSS. You will build a simple but attractive single-page web site for a fictitious restaurant. You will use git and GitHub to manage your project, and deploy the site to your student web server.</p>
+
+<h2>Objectives</h2>
+<p>By completing this challenge, you will practice and demonstrate the following skills:</p>
+
+<ul>
+    <li>Writing semantically-rich HTML pages by choosing the most appropriate elements to wrap your information</li>
+    <li>Writing well-formatted HTML source that is properly-indented and easy to read</li>
+    <li>Creating hyperlinks that tie pages together</li>
+    <li>Using HTML character entities to represent reserved or difficult to input characters</li>
+    <li>Building relative URLs that refer to other resources in your project</li>
+    <li>Creating external stylesheets and linking them to your web pages</li>
+    <li>Using a normalizing stylesheet to normalize the various default formatting provided by different web browsers, giving you a consistent foundation upon which to build</li>
+    <li>Writing style rules and using styling properties to control the formatting of your pages, including fonts, colors, links, backgrounds, borders, padding, and margins</li>
+    <li>Using various CSS units, including percentages, pixels, ems, hex colors, and rgba() colors</li>
+</ul>
+
+<h2>Resources</h2>
+
+<p><strong>We will learn the essentials of HTML and CSS in class</strong>, but the following freely-available resources will also help you complete this challenge. If you don't already know how to complete all the steps below, take a few minutes to read/watch these before you begin. If you get stuck, come back and consult these.</p>
+
+<h3>Relevant Slides from Class</h3>
+
+<ul class="resources">
+    <li class="resource slides"><a target="_blank" href="http://faculty.washington.edu/mikefree/info343/lectures/intro">HTML Introduction Slides</a></li>
+
+    <li class="resource slides"><a target="_blank" href="http://faculty.washington.edu/mikefree/info343/lectures/style">CSS Style Slides</a></li>
+
+</ul>
+
+<h3>Other Resources on the Web</h3>
+
+<ul class="resources">
+    <li class="resource video"><a target="_blank" href="https://www.youtube.com/watch?v=9gTw2EDkaDQ">HTML 5 Tutorial for Beginners</a></li>
+    <li class="resource video"><a target="_blank" href="https://www.youtube.com/watch?v=Wz2klMXDqF4">CSS Tutorial for Beginners</a></li>
+    <li class="resource reading"><a target="_blank" href="http://www.w3schools.com/tags/ref_byfunc.asp">General HTML 5 Reference</a></li>
+    <li class="resource reading"><a target="_blank" href="http://www.w3schools.com/cssref/css_selectors.asp">CSS Selectors Reference</a></li>
+    <li class="resource reading"><a target="_blank" href="http://www.w3schools.com/cssref/default.asp">CSS Properties Reference</a></li>
+</ul>
+
+<h2>Required Steps</h2>
+
+<p>To complete this challenge, follow these steps. If you get stuck, consult the resources above, <a ng-if="tas.length > 0" href="mailto:kshino@uw.edu"> ask your TA,</a> or <a href="mailto:mikefree@uw.edu">ask Mike</a>.</p>
+
+<p>Here is a screen shot of the page you are going to build:</p>
+
+<p><img class="img-responsive screenshot" src="img/screenshots/html-css/dawg-pizza.png" alt="screenshot of web page you will build during this challenge"></p>
+
+<p class="alert alert-warning">If you are looking at this and thinking, "no way, I have no idea how to build that," don't panic! I will walk you through building this, step-by-step, but I won't give you all the code to copy and paste. Instead, I will tell you what formatting you need to apply, and you will have to figure out the correct syntax and settings to achieve that. Look for links to specific reference pages, which will help you figure out how to accomplish the goal. Your version doesn't have to be a pixel-perfect match of the screenshots, but it should be very close.</p>
+
+<h3>Fork and Clone the Repo</h3>
+
+<p>In the first challenge, you learned how to use git and GitHub to manage your files. You now need to put that to work by forking my starting repository and cloning it to your computer. This starting repository contains file stubs and the various assets you will need to complete the challenge.</p>
+
+<ol class="steps">
+    <li>Go to my <a target="_blank" href="https://github.com/mkfreeman/essential-html-css">Essential HTML/CSS challenge repository</a> on GitHub</li>
+    <li>Click the "Fork" button located to the right of the repository name and follow any instructions you might receive<br/> 
+        <img class="img-responsive screenshot" src="img/screenshots/html-css/fork-button.png" alt="fork button on GitHub">
+    </li>
+    <li>In <strong>your forked repository on GitHub</strong> (not my original one), click the copy button next to the HTTPS clone URL to copy that URL to your clipboard <br>
+        <img class="img-responsive screenshot" src="img/screenshots/html-css/copy-clone-url.png" alt="copy clone url screenshot">
+    </li>
+    <li>Clone the repository to your local machine, just like you did in the previous challenge</li>
+</ol>
+
+<h3>Write the HTML</h3>
+
+<p>Open the <code>index.html</code> file in your text editor and create <a target="_blank" href="/templates/basic-html-template.html">a basic HTML page</a>.</p>
+
+<h4>The &lt;head&gt; Section</h4>
+
+<p>Add an element to the <code>&lt;head&gt;</code> section that sets the <a target="_blank" href="http://www.w3schools.com/tags/tag_title.asp">page title</a> to 'Dawg Pizza'.</p>
+
+<p>Also in the <code>&lt;head&gt;</code> section, add two <a target="_blank" href="http://www.w3schools.com/tags/tag_link.asp">stylesheet link elements</a>, the first pointing to the <code>css/normalize.css</code> file, and the second pointing to the <code>css/main.css</code> file. These elements tell the browser to load those stylesheets and apply the style rules within them.</p>
+
+<p>After the stylesheet links, add another element to specify <a target="_blank" href="http://stackoverflow.com/questions/4888377/how-to-add-a-browser-tab-icon-for-a-website">the icon for the page</a>, pointing to <code>img/pizza-icon.png</code>.</p>
+
+<h4>The &lt;body&gt; Section</h4>
+
+<p>As you probably noted in the screenshot, the main content of the page is in a box that is offset to the right side of the screen, allowing the background image to show through on the left. Create <a target="_blank" href="http://www.w3schools.com/tags/tag_main.asp">an element for the main page content</a> just inside the <code>&lt;body&gt;</code> element. We will apply style rules to that element to make it offset to the right side of the page.</p>
+
+<h4>Page Header</h4>
+
+<p>Next, add an element inside the main page content element for <a target="_blank" href="http://www.w3schools.com/tags/tag_header.asp">the header content</a>, which is this part of the page:</p>
+
+<p><img class="img-responsive screenshot" src="img/screenshots/html-css/header.png" alt="screenshot of page header"></p>
+
+<p>Add the text you see in the screenshot, using appropriate elements for the <a target="_blank" href="http://www.w3schools.com/tags/tag_hn.asp">top-level 'Dawg Pizza' heading</a> and the tag line below it.</p>
+
+<h4>General Info Section</h4>
+
+<p>Next, add a section for the basic restaurant information, which will look like this:</p>
+
+<p><img src="img/screenshots/html-css/general-info.png" alt="screenshot of general info part of the page" class="img-responsive screenshot"></p>
+
+<p>Notice that the background is different from the page header, so you will need to use a different element for this part of the page than you did for the page header. That new element should still be inside the main page content element, however, so that it will be offset to the right along with all the other page content.</p>
+
+<p>Add the content you see in the screenshot, using the most appropriate HTML elements for the <a target="_blank" href="http://www.w3schools.com/tags/tag_hn.asp">second-level headings</a>, the <a target="_blank" href="http://www.w3schools.com/tags/tag_a.asp">hyperlinks</a> and the normal text. When readers click on the address hyperlink, they should be sent to <code>https://goo.gl/maps/CKrRF</code>, which is a Google Map. When readers tap on the phone number hyperlink on a mobile phone, it should <a target="_blank" href="http://css-tricks.com/snippets/html/iphone-calling-and-texting-links/">initiate a call</a> to that phone number after the reader approves the action.</p>
+
+<h4>Menu Section</h4>
+
+<p>After the general info section, add another section for the menu, which is this part of the page:</p>
+
+<p><img src="img/screenshots/html-css/menu.png" alt="screenshot of menu section" class="img-responsive screenshot"></p>
+
+<p>Use the most appropriate elements for the second-level ('Our Menu') and third-level headers ('Meat Pies' and 'Veggie Pies').</p>
+
+<p>The most appropriate elements to use for the menu items is a tricky question. Your first instinct might be to just use normal paragraphs, but that doesn't encode any real meaning about that content. A menu is a list of things, so we should at least use some kind of list element. Your second thought might be to use a simple unordered list (<code>&lt;ul&gt;</code>), but that element is for a list of items where each item is independent of all the other items. Look at the menu again. It's actually comprised of a set of name and description pairs. Use the elements that are appropriate for a <a target="_blank" href="http://www.w3schools.com/tags/tag_dl.asp">list of descriptions</a>.
+
+<p>Note that the name of the first pizza has an ampersand in it. The ampersand character is a reserved control character in HTML, so you have to use the equivalent <a target="_blank" href="http://www.w3schools.com/html/html_entities.asp">HTML character entity</a> for the ampersand.</p>
+
+<p>For the pizza descriptions, just use a run of 'lorem ipsum' text. This sort of text is used as a placeholder so that page designers can see what the page will look like before the final text has been written. If you are using a text editor that supports it, just type <code>lorem</code> and hit tab to generate a run of lorem text. If your editor doesn't support that, you can use a web-based <a target="_blank" href="http://www.lipsum.com/">lorem generator</a>. Generate a short paragraph of text; the exact number of words is not important.</p>
+
+<h4>About Us Section</h4>
+
+<p>Add another section for the 'About Us' information, which looks like this:</p>
+
+<p><img src="img/screenshots/html-css/about-us.png" alt="screenshot of about us section" class="img-responsive screenshot"></p>
+
+<p>Use the most appropriate elements for the second-level heading ('About Us'), and two long paragraphs of lorem text. Again, the exact number of lorem words is not important.</p>
+
+<h4>Page Footer</h4>
+
+<p>Finally, create the <a target="_blank" href="http://www.w3schools.com/tags/tag_footer.asp">page footer</a>, which looks like this:</p>
+
+<p><img src="img/screenshots/html-css/footer.png" alt="screenshot of page footer" class="img-responsive screenshot"></p>
+
+<p>The footer should contain two paragraphs, the first of which provides a <a target="_blank" href="http://www.w3schools.com/html/html_entities.asp">copyright</a> declaration, and <a target="_blank" href="http://www.w3schools.com/tags/tag_address.asp">contact information for the page owner</a>.</p>
+
+<p>The second paragraph should contain a <a target="_blank" href="https://answers.yahoo.com/question/index?qid=20070716090150AAuRvLU">hyperlink that takes the viewer back to the top of the page</a>. The up-arrow symbol can be included using an <a target="_blank" href="http://www.w3schools.com/html/html_symbols.asp">HTML symbol entity</a>.</p>
+
+
+<h3>Add the Style Rules</h3>
+
+<p>Your HTML page should now be complete, and if you open it in a web browser, you should see a fairly plain-looking version of the page. To make it look more like the screen shots, we need to add some styling rules.</p>
+
+<p>Open the <code>css/main.css</code> file in your text editor. This is where we will specify all our styles for the page.</p>
+
+<p>First, we need to import the two fonts used by this page: <a target="_blank" href="https://www.google.com/fonts#QuickUsePlace:quickUse/Family:Raleway">Raleway</a> (for the headings) and <a target="_blank" href="https://www.google.com/fonts#QuickUsePlace:quickUse/Family:Lato">Lato</a> (for the rest of the text). Just as we did in class, use Google Fonts to generate <code>@import</code> declarations that include the 300 weight of Raleway, and the 300 and 400 weight of Lato. Add those <code>@import</code> directives to the top of your <code>css/main.css</code> file.</p>
+
+<p class="alert alert-warning">The Google Fonts tool will generate URLs in the @import directives with the <code>http://</code> protocol, but you might want to edit those directives to use the <code>https://</code> protocol instead. If you ever put this site on a server that requires use of the HTTPS protocol, the browser may generate a warning, or may not even load additional resources from HTTP URLs. But the browser will happily load resources from HTTPS URLs if the original page was fetched over HTTP.</p>
+
+<p>Now you need to add a series of style rules, each of which applies a particular set of formatting to elements selected by a CSS selector. The following list describes the formatting you need to apply, but you will have to figure out how to construct your rules so that they are applied to the correct elements. This kind of list is what you would commonly get from a graphic designer, so this is good practice for you. If you've forgotten the property name that controls a particular setting, use the embedded hyperlinks for clues.</p>
+
+<h4>General Page Body Formatting</h4>
+
+<ul>
+    <li>All text in the page body should use the <a target="_blank" href="http://www.w3schools.com/cssref/pr_font_font-family.asp">font</a> <code>'Lato'</code> at <a target="_blank" href="http://www.w3schools.com/cssref/pr_font_font-size.asp">18 pixels</a> and <a target="_blank" href="http://www.w3schools.com/cssref/pr_font_weight.asp">300 weight</a>; if the <code>'Lato'</code> font is not available for some reason, you should fall back to <code>'Helvetica Neue'</code>, then <code>'Helvetica'</code>, and finally <code>sans-serif</code></li>
+
+    <li>The body <a target="_blank" href="http://www.w3schools.com/cssref/pr_background-image.asp">background image</a> is in the file <code>background.jpg</code> in the <code>img</code> directory (note that the <code>img</code> directory is a peer to the directory in which this CSS file lives, so you need use a relative path that goes up one level and back down into the <code>img</code> directory)</li>
+
+    <li>The body <a target="_blank" href="http://www.w3schools.com/cssref/css3_pr_background-size.asp">background image size</a> should be set so that it scales to completely cover the entire page body</li>
+
+    <li>The background image should also remain <a target="_blank" href="http://www.w3schools.com/cssref/pr_background-attachment.asp">fixed with regard to the viewport</a> and not scroll with the page</li>
+
+    <li>All hyperlinks (both <a target="_blank" href="http://www.w3schools.com/cssref/sel_link.asp">unvisited</a> and <a target="_blank" href="http://www.w3schools.com/cssref/sel_visited.asp">visited</a>) should have <a target="_blank" href="http://www.w3schools.com/cssref/pr_text_text-decoration.asp">no underlines</a>, and should have the <a target="_blank" href="http://www.w3schools.com/cssref/pr_text_color.asp">color</a> <code>#0000AA</code></li>
+
+    <li>When a reader <a target="_blank" href="http://www.w3schools.com/cssref/sel_hover.asp">hovers over</a> or <a target="_blank" href="http://www.w3schools.com/cssref/sel_focus.asp">sets focus to</a> any hyperlink, the color should change to <code>#0000EE</code></li>
+</ul>
+
+<h4>Headings</h4>
+
+<ul>
+    <li>All the <a target="_blank" href="http://www.w3schools.com/tags/tag_hn.asp">headings</a> should use the <a target="_blank" href="http://www.w3schools.com/cssref/pr_font_font-family.asp">font</a> <code>'Raleway'</code> at 300 <a target="_blank" href="http://www.w3schools.com/cssref/pr_font_weight.asp">weight</a>; use the same fall back fonts as you did for the main body font</li>
+
+    <li>The top-level heading should have a <a target="_blank" href="http://www.w3schools.com/cssref/pr_font_font-size.asp">font size</a> of <code>300%</code> and <a target="_blank" href="http://www.w3schools.com/cssref/pr_margin.asp">all margins</a> set to <code>0</code></li>
+
+    <li>The second and third-level headings should use <code>#505050</code> for their <a target="_blank" href="http://www.w3schools.com/cssref/pr_text_color.asp">font color</a></li>
+    
+    <li>The second-level headings should have a font size of <code>150%</code> and a margin of <code>0</code></li>
+    
+    <li>The third-level headings should have a font size of <code>125%</code></li>
+</ul>
+
+<h4>Main Page Content</h4>
+
+<ul>
+    <li>The main page content should have a <a target="_blank" href="http://www.w3schools.com/cssref/pr_margin-left.asp">Left Margin</a> of <code>30%</code> so that it is shifted over to the right side of the page by 30% of the current window width; the top, bottom, and right margins should all be <code>20px</code></li>
+
+    <li>The background texture image for that area is in the file <code>ricepaper_v3.png</code> in the <code>img</code> directory</li>
+
+    <li>The <a target="_blank" href="http://www.w3schools.com/cssref/css3_pr_opacity.asp">opacity</a> of this area should be set to <code>0.9</code> so that is it slightly transparent</li>
+</ul>
+
+<h4>Page Header</h4>
+
+<ul>
+    <li>There should be <code>1em</code> of <a target="_blank" href="http://www.w3schools.com/cssref/pr_padding.asp">padding</a> between the edge and the content on all sides</li>
+
+    <li>The <a target="_blank" href="http://www.w3schools.com/cssref/pr_background-color.asp">background color</a> should be <code>#FA5A0F</code></li>
+
+    <li>The <a target="_blank" href="http://www.w3schools.com/cssref/pr_border-bottom.asp">bottom border</a> should be <code>5px</code> tall in the color <code>#EA4A00</code></li>
+
+    <li>The <a target="_blank" href="http://www.w3schools.com/cssref/pr_text_color.asp">color of the text</a> in the header should be <code>#FFFFFF</code></li>
+
+    <li>The tag line ('Feeding Hungry Huskies Since 2013') should be sized at <code>120%</code> in the color <code>#EEEEEE</code> with all margins set to <code>0</code></li>
+</ul>
+
+
+<h4>Restaurant Info Section</h4>
+
+<ul>
+    <li>There should be <code>1em</code> of <a target="_blank" href="http://www.w3schools.com/cssref/pr_padding.asp">padding</a> between the edge and the content on all sides</li>
+</ul>
+
+<h4>Menu Section</h4>
+
+<ul>
+    <li>There should be <code>1em</code> of <a target="_blank" href="http://www.w3schools.com/cssref/pr_padding.asp">padding</a> between the edge and the content on all sides</li>
+
+    <li>The background color for this area should use the <a target="_blank" href="http://css-tricks.com/rgba-browser-support/">following color values</a>: red = <code>207</code>; green = <code>205</code>; blue = <code>140</code>; opacity = <code>0.5</code></li>
+
+    <li>The pizza names should use a font weight of <code>400</code>. Note that different operating systems may render fonts in slightly different ways. The screen shots were taken on a Mac, so if you are viewing your page on Windows, the 400 font weight may not look quite as dark as it does in the screenshots. The TAs will be viewing these pages on a Mac and looking at your CSS source, so use 400 for the weight even if it looks a bit lighter than the screenshots on Windows.</li>
+
+    <li>The pizza descriptions should use a font size of <code>80%</code>, be in <a target="_blank" href="http://www.w3schools.com/cssref/pr_font_font-style.asp">italics</a>, and have a <code>1em</code> margin on the left and bottom</li>
+</ul>
+
+<h4>About Us Section</h4>
+
+<ul>
+    <li>There should be <code>1em</code> of <a target="_blank" href="http://www.w3schools.com/cssref/pr_padding.asp">padding</a> between the edge and the content on all sides</li>
+</ul>
+
+
+<h4>Page Footer</h4>
+
+<ul>
+    <li>There should be <code>1em</code> of <a target="_blank" href="http://www.w3schools.com/cssref/pr_padding.asp">padding</a> between the edge and the content on all sides</li>
+
+    <li>The background color for this area should be <code>#FC892F</code></li>
+
+    <li>The top border should be <code>5px</code> tall in the color <code>#EC791F</code></li>
+
+    <li>The text should sized at <code>80%</code> and <a target="_blank" href="http://www.w3schools.com/cssref/pr_text_text-align.asp">aligned</a> on the right side</li>
+</ul>
+
+
+<h3>Review The Page</h3>
+
+<p>Your page should now look like the screen shots above. Note that some browsers on some platforms may render this page slightly differently, so it doesn't have to match exactly, but it should look pretty close. If something doesn't look right, review the HTML and CSS for that section to see if you need to adjust it.</p>
+
+<h3>Add, Commit, Push, and Deploy</h3>
+
+<p>Once you've verified that your page looks correct, add and commit your changes to your local repository, push those changes back to your GitHub repository, and deploy your site to your student web server. You did all this in <a target="_blank" href="/course/challenges/files">the previous challenge</a>, so refer to that if you need to refresh your memory.</p>
+
+<p>After you've verified that you can view your published site in a your web browser, submit the link to it and your GitHub repository via the form on this page.</p>
+
+<p>Congratulations! You now know how to build basic web pages that are semantically-rich and visually-attractive. For many small businesses, that's all they really need, so you could start marketing your services today!</p>

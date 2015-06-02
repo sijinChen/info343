@@ -2,9 +2,12 @@
 var mainApp = angular.module('MainApp', ['LandingApp', 'LectureApp', 'ChallengeApp'])
 
 // main Controller
-mainApp.controller('MainController', ['$scope', function($scope){
-  $scope.page = 'pages/landing.html'
+mainApp.controller('MainController', ['$scope', '$location', function($scope,$location){
+  var location = $location.path().split('/')[1] == undefined ? '' : $location.path().split('/')[1]
+  $scope.page = location.length == 0 ? 'pages/landing.html' : 'pages/' + location + '.html'
   $scope.setView = function(url) {
+    var path = url.indexOf("landing") == -1 ? url.replace('.html','') : ''
+    $location.path(path)  
     $scope.page = 'pages/' + url
   }
 }])
@@ -27,7 +30,6 @@ landingModule.factory('LandingData', ['$http', function($http){
 // Landing page controller
 landingModule.controller('LandingController',['$scope', 'LandingData', function($scope, LandingData){
 	LandingData.then(function(data){
-    console.log("landing content ", data)
 	  $scope.content = data;
 	});
 }])
@@ -65,14 +67,17 @@ challengeModule.factory('ChallengeData', ['$http', function($http){
   });
   return ChallengeData;
 }]);
-var dat;
+
 // Controller
-challengeModule.controller('ChallengeController',['$scope', 'ChallengeData', function($scope, ChallengeData){
+challengeModule.controller('ChallengeController',['$scope', '$location', 'ChallengeData', function($scope, $location, ChallengeData){
   ChallengeData.then(function(data){
     $scope.challenges = data;
-    $scope.currentChallenge = null
-     dat = data
+    var challenge = $location.path().split('/')[2] == undefined ? null : 'challenges/' + $location.path().split('/')[2] +'.html'
+    $scope.currentChallenge = challenge
     $scope.viewChallenge = function(url) {
+      console.log('view challenge ', url)
+      var path = url == null ? 'challenges': $location.path() +'/' + url
+      $location.path(path)
       var currentChallenge = url == null ? null : 'challenges/' + url + '.html'
       $scope.currentChallenge = currentChallenge
     }

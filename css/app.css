@@ -1,5 +1,85 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600);
+
+main {
+	padding-bottom:125px;
+}
 body {
-	font-family:georgia !important;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.details {
+    color:rgb(242, 152, 152);
+}
+
+.btn-default {
+	color: #337ab7
+}
+
+.btn-default:hover {
+	color:#67B3F4 !important
+}
+.jumbotron {
+    background-image: url(../img/web-2-xs.jpg);
+    background-size: cover;
+    color: #FFF;
+}
+
+footer {
+    /*margin-top: 4em;
+    border-top: 1px solid #EEE;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    font-size: 75%;
+*/    position:fixed;
+background:white;
+    bottom:0px;
+    left:0px;
+    width:100%;
+}
+
+footer .copyright {
+    text-align: right;
+    padding-right:10px;
+    padding-top:8px;
+    font-size:13px;
+    background:white;
+    margin-bottom:-3px;
+}
+
+#footer-background {
+	background-image:url(../img/header.png);
+	height:100px;
+}
+.form-control {
+    font-size: 16px;
+}
+
+dd {
+    margin-bottom: 1em;
+}
+
+@media (min-width: 992px) {
+    .jumbotron {
+        background-image: url(../img/web-2-sm.jpg);
+    }
+}
+
+@media (min-width: 2000px) {
+    .jumbotron {
+        background-image: url(../img/web-2.jpg);
+    }
+}
+
+ol > li > ol {
+    list-style: lower-alpha;
+}
+
+
+
+body {
+	/*font-family:georgia !important;*/
 	margin:20px !important;
 }
 .section {
@@ -10,8 +90,8 @@ body {
 }
 
 a {
-	text-decoration: none;
-	color:black;
+	/*text-decoration: none;*/
+	/*color:black;*/
 	cursor:pointer;
 }
 
@@ -73,3 +153,4 @@ table#details tr td:first-child{
   line-height: 32px;
   background-repeat: no-repeat;
 }
+

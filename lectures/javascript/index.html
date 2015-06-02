@@ -2,7 +2,7 @@
 	<html class="sl-root decks export loaded ua-phantomjs reveal-viewport theme-font-montserrat theme-color-white-blue">
 	<head>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/headjs/0.96/head.min.js"></script>
-		<link rel="stylesheet" href="../lib/reveal/css/custom.css" />
+		<link rel="stylesheet" href="../../lib/reveal/css/custom.css" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -431,13 +431,13 @@ else if(wr){var t="/",r=wr.getAttribute("id");r&&(r=r.toLowerCase(),r=r.replace(
 				backgroundTransition: SLConfig.deck.background_transition, 
 				multiplex:{
                     secret: null, // Obtained from the socket.io server. Gives this (the master) control of the presentation
-                    id: 'c8a5c461f6be1c88', // Obtained from socket.io server
+                    id: 'fa7242040e38af6d', // Obtained from socket.io server
 					url: 'http://freeman01.ischool.uw.edu:1948' // Location of socket.io server
                 },              
                dependencies: [
                     { src: '//cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.10/socket.io.min.js', async: true },
-                    { src: '../lib/reveal/plugin/multiplex/client.js', async: true },              
-                    { src: '../lib/reveal/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: '../../lib/reveal/plugin/multiplex/client.js', async: true },              
+                    { src: '../../lib/reveal/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
                ]
 			});
 

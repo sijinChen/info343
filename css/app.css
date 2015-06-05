@@ -20,6 +20,11 @@ body {
 .btn-default:hover {
 	color:#67B3F4 !important
 }
+
+.btn-group, .btn-group-vertical {
+	padding:8px;
+}
+
 .jumbotron {
     background-image: url(../img/web-2-xs.jpg);
     background-size: cover;

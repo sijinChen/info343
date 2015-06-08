@@ -84,21 +84,24 @@ challengeModule.controller('ChallengeController',['$scope', '$location', '$q', '
   $q.all([ChallengeData, ChallengeRubric]).then(function(values){    
     $scope.challenges = values[0];    
     $scope.rubrics = values[1];
-    var challenge = $location.path().split('/')[2] == undefined ? null : 'challenges/' + $location.path().split('/')[2] +'.html'
-    $scope.currentChallenge = challenge
-    $scope.currentRubric = $scope.rubrics.filter(function(d) {
-      if($scope.currentChallenge == null) return false
-      return d.id == $location.path().split('/')[2] 
-    });
+    $scope.getChallenge = function() {
+      var challenge = $location.path().split('/')[2] == undefined ? null : $location.path().split('/')[2] 
+      console.log('challenge ', challenge)
+      $scope.currentChallenge = challenge 
+      $scope.currentChallengeUrl = challenge == undefined ? null : 'challenges/' + challenge +'.html'
+      $scope.currentRubric = $scope.rubrics.filter(function(d) {
+        if($scope.currentChallenge == null) return false
+        console.log(d.challenge_id, $scope.currentChallenge)
+        return d.challenge_id == $scope.currentChallenge
+      });  
+      $scope.submitUrl = $scope.currentChallenge == null ? '' : $scope.challenges.filter(function(d){return d.challenge_id == $scope.currentChallenge})[0].submitUrl
+      console.log('submitURl, ',  $scope.submitUrl)
+    }
+    $scope.getChallenge()
     $scope.viewChallenge = function(url) {
       var path = url == null ? 'challenges': $location.path() +'/' + url
       $location.path(path)
-      var currentChallenge = url == null ? null : 'challenges/' + url + '.html'
-      $scope.currentChallenge = currentChallenge
-      $scope.currentRubric = $scope.rubrics.filter(function(d) {
-        if($scope.currentChallenge == null) return false
-        return d.id == url
-      });
+      $scope.getChallenge()
     }
 
   })

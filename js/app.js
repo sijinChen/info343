@@ -6,6 +6,7 @@ mainApp.controller('MainController', ['$scope', '$location', function($scope,$lo
   var location = $location.path().split('/')[1] == undefined ? '' : $location.path().split('/')[1]
   $scope.page = location.length == 0 ? 'pages/landing.html' : 'pages/' + location + '.html'
   $scope.setView = function(url) {
+    console.log('url ', url)
     var path = url.indexOf("landing") == -1 ? url.replace('.html','') : ''
     $location.path(path)  
     $scope.page = 'pages/' + url
@@ -68,19 +69,38 @@ challengeModule.factory('ChallengeData', ['$http', function($http){
   return ChallengeData;
 }]);
 
+// Challenge data
+challengeModule.factory('ChallengeRubric', ['$http', function($http){
+  console.log('get rubrics!')
+  var Url   = "data/rubrics.csv";
+  var ChallengeRubrics = $http.get(Url).then(function(response){
+     return CSVToArray(response.data);
+  });
+  return ChallengeRubrics
+}]);
+
 // Controller
-challengeModule.controller('ChallengeController',['$scope', '$location', 'ChallengeData', function($scope, $location, ChallengeData){
-  ChallengeData.then(function(data){
-    $scope.challenges = data;
+challengeModule.controller('ChallengeController',['$scope', '$location', '$q', 'ChallengeData', 'ChallengeRubric', function($scope, $location, $q, ChallengeData, ChallengeRubric){
+  $q.all([ChallengeData, ChallengeRubric]).then(function(values){    
+    $scope.challenges = values[0];    
+    $scope.rubrics = values[1];
     var challenge = $location.path().split('/')[2] == undefined ? null : 'challenges/' + $location.path().split('/')[2] +'.html'
     $scope.currentChallenge = challenge
+    $scope.currentRubric = $scope.rubrics.filter(function(d) {
+      if($scope.currentChallenge == null) return false
+      return d.id == $location.path().split('/')[2] 
+    });
     $scope.viewChallenge = function(url) {
-      console.log('view challenge ', url)
       var path = url == null ? 'challenges': $location.path() +'/' + url
       $location.path(path)
       var currentChallenge = url == null ? null : 'challenges/' + url + '.html'
       $scope.currentChallenge = currentChallenge
+      $scope.currentRubric = $scope.rubrics.filter(function(d) {
+        if($scope.currentChallenge == null) return false
+        return d.id == url
+      });
     }
-  });
+
+  })
 }])
     

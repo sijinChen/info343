@@ -13,7 +13,7 @@
 							<td ng-bind="content.time"></td>
 						</tr>
 							<td>Location:</td>
-							<td ng-bind="content.location"></td>
+							<td><a href="http://uw.edu/maps/?mgh" target="_blank">{{content.location}}</a></td>
 						</tr>
 							<td>Credits:</td>
 							<td ng-bind="content.credits"></td>
@@ -41,15 +41,15 @@
 	<div class="container-fluid">
 		<div class="group">
 			<h2>Overview</h2>
-			<p ng-bind="content.overview"></p>
+			<p class="description" ng-bind="content.overview"></p>
 		</div>
 		<div class="group">
 			<h2>Challenges</h2>
-			<p ng-bind="content.challenges"></p>
+			<p class="description"  ng-bind="content.challenges"></p>
 		</div>
 		<div class="group">
 			<h2>Participation</h2>
-			<p ng-bind="content.participation"></p>
+			<p class="description" ng-bind="content.participation"></p>
 		</div>
 	</div>
 </main>

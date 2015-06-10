@@ -1,7 +1,25 @@
 // Main app
-var mainApp = angular.module('MainApp', ['LandingApp', 'LectureApp', 'ChallengeApp'])
+var mainApp = angular.module('MainApp', ['LandingApp', 'LectureApp', 'ChallengeApp','ngRoute'])
 
+
+.controller('Test', function($scope, $routeParams) {
+     $scope.name = "TestController";
+     $scope.params = $routeParams;
+ })
 // main Controller
+.controller('MainController', function($scope, $route, $routeParams, $location) {
+     $scope.$route = $route;
+     $scope.$location = $location;
+     $scope.$routeParams = $routeParams;
+ })
+.config(function($routeProvider, $locationProvider) {
+  $routeProvider
+   .when('/test/', {
+    templateUrl: 'pages/challenges.html',
+    controller: 'ChallengeController',
+  })
+   $locationProvider.html5Mode(true);
+})
 mainApp.controller('MainController', ['$scope', '$location', function($scope,$location){
   var location = $location.path().split('/')[1] == undefined ? '' : $location.path().split('/')[1]
   $scope.page = location.length == 0 ? 'pages/landing.html' : 'pages/' + location + '.html'

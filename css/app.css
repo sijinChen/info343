@@ -159,3 +159,11 @@ table#details tr td:first-child{
   background-repeat: no-repeat;
 }
 
+.challenge-title {
+    opacity:.5;
+}
+
+a {
+  color: #337ab7 !important;
+  text-decoration: none !important;
+}

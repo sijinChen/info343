@@ -36,6 +36,7 @@ var mainApp = angular.module('MainApp', ['ngRoute'])
     })
     $scope.currentChallenge = $routeParams.challenge_id
     $scope.currentRubric = $scope.rubrics[$routeParams.challenge_id]
+    $scope.submitUrl = $scope.challenges.filter(function(d) { return d.challenge_id == $scope.currentChallenge})[0].submitUrl
   })
 })
 

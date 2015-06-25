@@ -1,4 +1,4 @@
-// Start ap
+// Start app
 var mainApp = angular.module('MainApp', ['ngRoute'])
 
 // Config route provider
@@ -47,7 +47,21 @@ var mainApp = angular.module('MainApp', ['ngRoute'])
   });
 }])
 
-
+// Schedule controller 
+.controller('ScheduleController', function($scope, $q, ChallengeData, Items){
+  $q.all([ChallengeData, Items]).then(function(values){    
+    $scope.challenges = values[0];    
+    $scope.lectures = values[1];
+    $scope.challenges.map(function(challenge){
+      var lecture = $scope.lectures.filter(function(lecture){
+        return lecture.date == challenge.due
+      })[0]
+      if(lecture == undefined) return
+      lecture.due = challenge.title
+      lecture.challengeUrl = challenge.challenge_id
+    })
+  })
+})
 // Landing page data
 .factory('LandingData', ['$http', function($http){
   var Url   = "data/content.csv";

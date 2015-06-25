@@ -1,7 +1,7 @@
 <main ng-app="LectureApp" ng-controller="LectureController">		
 	<div class="section">Lectures</div>
 	<div class="lesson" ng-repeat="lesson in items">
-		<div>
+		<div ng-if="lesson.url">
 			<a class="title" target="_blank" href='lectures/{{ lesson.url}}'>{{lesson.title}}</a>
 		</div>
 		<div class="description">{{lesson.description}}</div>

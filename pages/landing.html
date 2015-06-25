@@ -1,5 +1,5 @@
-<main ng-app="LandingApp" ng-controller="LandingController">		
-	<div>
+<main>		
+	<div ng-controller="LandingController">
 	<div class="container-fluid group">
 		<div class = "row">
 			<div class="col-sm-4">
@@ -60,5 +60,21 @@
 			<p class="description"  ng-bind="content.open_source"></p>
 		</div>
 		
+	</div>
+</div>
+
+	<div class="container-fluid" ng-controller="ScheduleController">
+		<h2>Schedule</h2>
+		<table class="table table-hover">
+			<th>Date</th>
+			<th>Topic</th>
+			<th>Due</th>
+			 <tr ng-repeat="lecture in lectures">
+			 	<td>{{lecture.date}}</td>
+			 	<td ng-if="lecture.url"><a href="lectures/{{lecture.url}}" target="_blank">{{lecture.title}}</a></td>
+			 	<td ng-if="!lecture.url">{{lecture.title}}</td>
+			 	<td><a href='#challenges/{{lecture.challengeUrl}}'>{{lecture.due}}</a></td>
+			 </tr>
+		</table>
 	</div>
 </main>

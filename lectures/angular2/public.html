@@ -252,15 +252,10 @@ else if(wr){var t="/",r=wr.getAttribute("id");r&&(r=r.toLowerCase(),r=r.replace(
 				rtl: SLConfig.deck.rtl || false,
 
 				transition: 'none',
-				backgroundTransition: SLConfig.deck.background_transition, 
-				multiplex:{
-                    secret: '14332830596713342645', // Obtained from the socket.io server. Gives this (the master) control of the presentation
-                    id: 'd10933bbed39516c', // Obtained from socket.io server
-					url: 'http://freeman01.ischool.uw.edu:1948' // Location of socket.io server
-                },              
+				backgroundTransition: SLConfig.deck.background_transition,         
                dependencies: [
                     { src: '//cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.10/socket.io.min.js', async: true },
-                    { src: '../../lib/reveal/plugin/multiplex/master.js', async: true },              
+                    { src: '../../lib/reveal/plugin/multiplex/client.js', async: true },              
                     { src: '../../lib/reveal/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
                ]
 			});

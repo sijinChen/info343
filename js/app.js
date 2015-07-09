@@ -4,11 +4,6 @@ var baseUrl = 'https://api.spotify.com/v1/search?type=track&query='
 var myApp = angular.module('myApp', [])
 var volumeCurrent = 0.5;
 
-$("#card").flip({
-    axis: 'x',
-    trigger: 'hover'
-});
-
 
 
 var myCtrl = myApp.controller('myCtrl', function($scope, $http) {
@@ -55,6 +50,8 @@ var myCtrl = myApp.controller('myCtrl', function($scope, $http) {
         }
 
         $("#setVolume").show();
+
+
     }
     $scope.setOrder = function(value){
         $scope.order = value;

@@ -167,3 +167,22 @@ a {
   color: #337ab7 !important;
   text-decoration: none !important;
 }
+
+#setVolume{
+    display:none;
+    position: relative;
+}
+
+
+button:focus{
+    color:white;
+    background-color: #204d74;
+}
+button:active{
+    color:white;
+    background-color: #204d74;
+}
+button:target{
+    color:white;
+    background-color: #204d74;
+}

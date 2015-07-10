@@ -11,6 +11,8 @@
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 	<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>-->
+	<script src="nnattawat-flip-bd29e0c/dist/jquery.flip.js"></script>
+	<script src="js/app.js"></script>
 	<link rel='stylesheet' href="css/app.css">
 
 	<!--<script src="http://code.jquery.com/jquery-[latest].min.js"></script>-->
@@ -36,41 +38,37 @@
 			<button ng-disabled="songForm.search.$invalid" class="btn btn-primary" ng-click="getSongs()" type="submit">Submit</button>
 		</div>
 
-	</form>
 
-
-	<div>
 		<div>
+			<br/>
 			<button ng-click = 'setOrder("name")'>Sort by Album's Name</button>
 			<button ng-click = 'setOrder("popularity")'>Sort by Popularity</button>
 			<button ng-click = 'setOrder("artists[0].name")'>Sort by Artist A-Z</button>
 			<button ng-click = 'setOrder("-artists[0].name")'>Sort by Artist Z-A</button>
-
 		</div>
 
-
+	</form>
 		<div class="container-fixed" class="col-xs-6 col-lg-6">
 
-			<p ng-show="tracks.length>0" class="help-block">Click to sample</p>
+			<p ng-show="tracks.length>0" class="help-block">Click to sample<br/> Hover over artists' name to see their related songs</p>
 
 			<div ng-class="track.preview_url == currentSong ? 'playing' : ''"  ng-repeat="track in tracks | orderBy:order" class="col-xs-4 img">
+				<div>
 
-					<img ng-click="play(track.preview_url)" id='image' title="{{track.name}}" src="{{track.album.images[1].url}} "></img>
+					<img ng-click="play(track.preview_url)" id='image' title="{{track.name}}" src="{{track.album.images[1].url}}"></img>
 						<p>Album: {{track.name}}</p>
 						<p>Artist:
-						<a href="#" data-toggle="tooltip" title= getArtist(track.artists[0].name)>{{track.artists[0].name}}</a>
+						<a href="#" ng-mouseover= "getArtists(track.artists[0].name)" title="{{msg}}">{{track.artists[0].name}}</a>
+
 						</p>
+
 						<p>Ranking: {{track.popularity}}</p>
 
-					
-					<input id="setVolume" type="range" class="slider" min="0" max="1" step="0.05" position= "absolute" oninput="Player.setVolume(this.value)">
-
+				</div>
 			</div>
-
-
+			<input id="setVolume" type="range" class="slider" min="0" max="1" step="0.05" oninput="Player.setVolume(this.value)">
 
 		</div>
-	</div>
 
 
 </div>

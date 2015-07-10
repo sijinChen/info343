@@ -7,8 +7,14 @@ body {
     font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: 300;
     font-size: 16px;
+    background-color: mistyrose;
 }
-
+form{
+    background-color: lavender;
+}
+button{
+    background-color: #d9edf7;
+}
 .details {
     color:rgb(242, 152, 152);
 }
@@ -170,7 +176,7 @@ a {
 
 #setVolume{
     display:none;
-    position: relative;
+    position:fixed;
 }
 
 

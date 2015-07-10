@@ -16,16 +16,19 @@ var myCtrl = myApp.controller('myCtrl', function($scope, $http) {
         })
     }
     $scope.getArtists = function(val) {
+        var songList = "";
         $http.get(baseUrl + $scope.track).success(function(response){
-            if(response.tracks.items.artists[0].name = val){
-                dataArtist = $scope.artistAlbum = response.tracks.items.name
-            }
+            dataArtist = $scope.artistAlbum = response.tracks.items
+            dataArtist.forEach(function(data){
+                if (data.artists[0].name == val) {
+                    songList += data.name + "        ranking: " + data.popularity + "\n";
+                }
+            });
+            $scope.msg = songList;
         })
-        return dataArtist;
     }
 
     $scope.play = function(song) {
-
         if($scope.currentSong == song) {
             $scope.audioObject.pause()
             $scope.currentSong = false
@@ -33,6 +36,7 @@ var myCtrl = myApp.controller('myCtrl', function($scope, $http) {
             return
         }
         else {
+
             if($scope.audioObject.pause != undefined) $scope.audioObject.pause()
             $scope.audioObject = new Audio(song);
             $scope.audioObject.volume = volumeCurrent;
@@ -47,6 +51,8 @@ var myCtrl = myApp.controller('myCtrl', function($scope, $http) {
             window.Player = {
                 setVolume: setVolume,
             };
+
+
         }
 
         $("#setVolume").show();
@@ -56,6 +62,7 @@ var myCtrl = myApp.controller('myCtrl', function($scope, $http) {
     $scope.setOrder = function(value){
         $scope.order = value;
     }
+
 })
 
 
